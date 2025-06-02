@@ -14,4 +14,5 @@ export const ButtonBox = styled.button`
     &:hover{
         transform: scale(1.1);
     }
+
 `
