@@ -1,9 +1,9 @@
 import React from 'react'
 import * as S from './style'
 
-const CustomBtn = () => {
+const CustomBtn = ({onClick}) => {
   return (
-    <S.ButtonBox>시작하기</S.ButtonBox>
+    <S.ButtonBox onClick={onClick}>시작하기</S.ButtonBox>
   )
 }
 

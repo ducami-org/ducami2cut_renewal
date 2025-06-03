@@ -11,6 +11,7 @@ export const ButtonBox = styled.button`
     width: 120px;
     transition: transform 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
+    z-index: 1000;
     &:hover{
         transform: scale(1.1);
     }
