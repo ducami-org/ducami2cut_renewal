@@ -1,11 +1,14 @@
 import React from 'react'
 import * as S from './style'
+import Header from '../../components/common/Header'
 
 const SelectFrame = () => {
   return (
-    <div>
-      
-    </div>
+    <>
+      <S.Container>
+        <Header/>
+      </S.Container>
+    </>
   )
 }
 
