@@ -6,9 +6,19 @@ export const Container = styled.div`
     padding:0px 40px;
     width:100vw;
     height: 100vh;
-    background-color:${Colors.white};
+    background-color:${Colors.gray};
     align-items: center;
-    justify-content: space-between;
+    justify-content:flex-start;
     display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+`
+export const SelectWrapper = styled.div`
+    width: 100vw;
+    height: 100%;
+    padding:40px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
     box-sizing: border-box;
 `
