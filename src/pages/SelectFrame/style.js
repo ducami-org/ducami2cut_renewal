@@ -13,12 +13,3 @@ export const Container = styled.div`
     box-sizing: border-box;
     flex-direction: column;
 `
-export const SelectWrapper = styled.div`
-    width: 100vw;
-    height: 100%;
-    padding:40px;
-    display: flex;
-    justify-content:space-between;
-    align-items: center;
-    box-sizing: border-box;
-`

@@ -8,7 +8,7 @@ export const BtnBox = styled.button`
     justify-content:center;
     align-items: center;
     border-radius: 80px;
-    border : 2px solid ${Colors.primary};
+
     background-color: ${Colors.white};
     color:${Colors.black};
     font-family:'paperlogyB';

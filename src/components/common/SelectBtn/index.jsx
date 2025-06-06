@@ -1,11 +1,10 @@
 import React from 'react'
+import * as S from './style'
 
-const index = () => {
+const SelectBtn = () => {
   return (
-    <div>
-      
-    </div>
+    <S.BtnBox>선택하기</S.BtnBox>
   )
 }
 
-export default index
+export default SelectBtn
