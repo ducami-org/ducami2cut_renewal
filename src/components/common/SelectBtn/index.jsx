@@ -1,10 +1,8 @@
-import React from 'react'
-import * as S from './style'
+import React from "react";
+import * as S from "./style";
 
-const SelectBtn = () => {
-  return (
-    <S.BtnBox>선택하기</S.BtnBox>
-  )
-}
+const SelectBtn = ({ onClick }) => {
+  return <S.BtnBox onClick={onClick}>선택하기</S.BtnBox>;
+};
 
-export default SelectBtn
+export default SelectBtn;

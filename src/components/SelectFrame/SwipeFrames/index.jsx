@@ -2,14 +2,13 @@ import React, { useRef, useEffect, useState } from "react";
 import { Colors } from "../../../styles/colors";
 import * as S from "./style";
 import { Swiper } from "swiper/react";
-import { Navigation} from "swiper/modules";
+import { Navigation } from "swiper/modules";
 import Frames from "../Frames";
 import ArrowBtn from "../../common/ArrowBtn";
 import { FrameColors } from "../../../styles/frameColors";
 import { usePhotoStore } from "../../../store/PhotoInfo";
 import SelectBtn from "../../common/SelectBtn";
 import "swiper/css";
-import "swiper/css/navigation";
 
 const SwipeFrames = () => {
   const prevRef = useRef(null);
@@ -19,8 +18,12 @@ const SwipeFrames = () => {
   const changeColor = usePhotoStore((state) => state.actions.setFrameColor);
 
   const handleSlideChange = (swiper) => {
-    setActiveIndex(swiper.activeIndex)
-  }
+    setActiveIndex(swiper.activeIndex);
+  };
+
+  const handleChangeColor = () => {
+    changeColor(FrameColors[activeIndex].color);
+  };
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -33,12 +36,11 @@ const SwipeFrames = () => {
 
   return (
     <S.SelectWrapper>
-      <S.SwiperWrapper style={{ display: "flex", alignItems: "center" }}>
+      <S.SwiperWrapper>
         <ArrowBtn direct="left" ref={prevRef} />
 
         {isReady && (
           <Swiper
-            loop={true}
             modules={[Navigation]}
             navigation={{
               prevEl: prevRef.current,
@@ -63,7 +65,7 @@ const SwipeFrames = () => {
 
         <ArrowBtn direct="right" ref={nextRef} />
       </S.SwiperWrapper>
-      <SelectBtn onClick={()=> {changeColor(FrameColors[activeIndex].color)}} />
+      <SelectBtn onClick={handleChangeColor} />
     </S.SelectWrapper>
   );
 };

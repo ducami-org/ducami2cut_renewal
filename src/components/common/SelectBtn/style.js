@@ -1,10 +1,9 @@
 import styled from "styled-components";
 import { Colors } from "../../../styles/colors";
 
-export const BtnBox = styled.div`
-  width: 100px;
+export const BtnBox = styled.button`
   display: flex;
-  padding: 10px 20px;
+  padding: 12px 20px;
   background-color: ${Colors.white};
   border-radius: 90px;
   color: ${Colors.black};
