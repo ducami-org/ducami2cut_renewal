@@ -1,11 +1,18 @@
 import React from 'react'
 import * as S from './style'
+import Header from '../../components/common/Header'
+import SwipeFrames from '../../components/SelectFrame/SwipeFrames'
+import SelectBtn from '../../components/common/SelectBtn'
 
 const SelectFrame = () => {
   return (
-    <div>
-      
-    </div>
+    <>
+      <S.Container>
+        <Header right='/' left='/'/>
+          <SwipeFrames/>
+        
+      </S.Container>
+    </>
   )
 }
 

@@ -42,7 +42,7 @@ export const Photo = styled.img`
         : fadeInBottom} 1.5s ease ${$aniNum === 1
         ? "0.2s"
         : $aniNum === 2
-        ? "0s"
+        ? "0.1s"
         : $aniNum === 3
         ? "0.6s"
         : "0.8s"};
