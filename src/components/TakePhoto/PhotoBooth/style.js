@@ -13,4 +13,12 @@ export const BoothWrapper = styled.div`
 export const Camera = styled(Webcam)`
     width: 55%;
     border-radius: 8px;
+    position: relative;
+`
+export const cntNum = styled.h1`
+    font-size: 50px;
+    font-family: 'paperlogyB';
+    color:white;
+    opacity: 0.5;
+    position: absolute;
 `
