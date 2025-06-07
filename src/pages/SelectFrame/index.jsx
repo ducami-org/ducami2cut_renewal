@@ -8,7 +8,7 @@ const SelectFrame = () => {
   return (
     <>
       <S.Container>
-        <Header right="/" left="/bg" title="프레임 선택" />
+        <Header right="/bg" left="/" title="프레임 선택" />
         <SwipeFrames />
       </S.Container>
     </>

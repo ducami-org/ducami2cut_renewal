@@ -6,9 +6,9 @@ const Header = ({right , left ,title}) => {
   const nav = useNavigate();
   return (
     <S.HeaderWrapper>
-      <S.NextButton onClick={()=> nav(right)}>뒤로</S.NextButton>
+      <S.NextButton onClick={()=> nav(left)}>뒤로</S.NextButton>
       <S.SelectTitle>{title}</S.SelectTitle>
-      <S.NextButton onClick={()=> nav(left)}>다음</S.NextButton>
+      <S.NextButton onClick={()=> nav(right)}>다음</S.NextButton>
     </S.HeaderWrapper>
   )
 }
