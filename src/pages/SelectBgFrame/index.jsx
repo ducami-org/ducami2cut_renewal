@@ -6,7 +6,7 @@ import SwipePhoto from '../../components/SelectBgPhoto/SwipePhoto'
 const SelectBg = () => {
   return (
     <S.Container>
-        <Header right='/frame' left='/' title='배경 선택'/>
+        <Header right='/take' left='/frame' title='배경 선택'/>
         <SwipePhoto/>
     </S.Container>
   )
