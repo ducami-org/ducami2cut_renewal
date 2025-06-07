@@ -31,5 +31,6 @@ export const FrameWrapper = styled(SwiperSlide)`
   &.swiper-slide-active {
     transform: scale(1); 
     opacity: 1;
+    z-index: 1000;
   }
 `

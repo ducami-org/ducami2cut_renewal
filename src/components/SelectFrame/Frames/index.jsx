@@ -1,9 +1,9 @@
 import React from 'react'
 import * as S from './style'
 
-const Frames = ({color}) => {
+const Frames = ({p}) => {
   return (
-    <S.FrameBox style={{backgroundColor:color}}>
+    <S.FrameBox style={{backgroundColor:p}}>
         <S.EmptyBox/>
         <S.EmptyBox/>
     </S.FrameBox>
