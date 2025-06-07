@@ -1,0 +1,30 @@
+export const PhotoUrl = [
+    {
+        id:1,
+        url:'https://www.imaeil.com/photos/2022/08/17/2022081719563747922_l.jpg'
+    },{
+        id:2,
+        url:'https://i.namu.wiki/i/Ak01MLBhXJmXfhmoNycSC18oquE-db2sea8zmUF7sw38MG3KemaJ6jsVGnalbF-80p75qZZ-QzxizEr5PSDvg0DTgYcOzzgFJSI9d8eUtg3AXvwDDC4dXqHoWQ7NmV9VGrIGaYp3B1FfgEh-Pkqr8w.webp'
+    },{
+        id:3,
+        url:"https://i.ibb.co/Sw2Cv0F3/Whisk-cymwq5y2ji.jpg"
+    },{
+        id:4,
+        url:"https://i.ibb.co/kgw1ydzP/Whisk-m2n2y4otlm.jpg" 
+    },{
+        id:5,
+        url:"https://i.ibb.co/TMTM9P85/Whisk-gewzdi5y2q.jpg"
+    },{
+        id:6,
+        url:"https://i.ibb.co/Rp1YrF3G/Whisk-5d81dedc6d.jpg"
+    },{
+        id:7,
+        url:'https://i.pinimg.com/736x/c6/cf/93/c6cf93c1e250cb381073e43c546cdd89.jpg'
+    },{
+        id:8,
+        url:"https://i.ibb.co/h1T7LgWR/Whisk-myxnzvhzmq.jpg"
+    },{
+        id:9,
+        url:"https://i.ibb.co/bRMBmcg5/Whisk-wzlmdvlmde.jpg"
+    }
+]

@@ -1,19 +1,18 @@
-import React from 'react'
-import * as S from './style'
-import Header from '../../components/common/Header'
-import SwipeFrames from '../../components/SelectFrame/SwipeFrames'
-import SelectBtn from '../../components/common/SelectBtn'
+import React from "react";
+import * as S from "./style";
+import Header from "../../components/common/Header";
+import SwipeFrames from "../../components/SelectFrame/SwipeFrames";
+import SelectBtn from "../../components/common/SelectBtn";
 
 const SelectFrame = () => {
   return (
     <>
       <S.Container>
-        <Header right='/' left='/'/>
-          <SwipeFrames/>
-        
+        <Header right="/" left="/bg" title="프레임 선택" />
+        <SwipeFrames />
       </S.Container>
     </>
-  )
-}
+  );
+};
 
-export default SelectFrame
+export default SelectFrame;

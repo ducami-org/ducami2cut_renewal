@@ -8,11 +8,11 @@ export const BtnBox = styled.button`
     justify-content:center;
     align-items: center;
     border-radius: 80px;
-
     background-color: ${Colors.white};
     color:${Colors.black};
     font-family:'paperlogyB';
     transition: transform 0.3s ease;
+    z-index: 1000;
     &:focus{
         outline: none;
     }
