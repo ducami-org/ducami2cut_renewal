@@ -5,7 +5,7 @@ import { PhotoUrl } from '../../../styles/bgPhoto'
 import { usePhotoStore } from '../../../store/PhotoInfo'
 
 const SwipePhoto = () => {
-  const bg = usePhotoStore((state)=>state.bgPhoto)
+  const bg = usePhotoStore((state)=>state.actions.setBgPhoto)
   return (
     <SwipeThings
     array={PhotoUrl}

@@ -5,7 +5,7 @@ import SwipeThings from "../../common/Swiper";
 import { FrameColors } from "../../../styles/frameColors";
 
 const SwipeFrames = () => {
-  const color = usePhotoStore((state) => state.frameColor);
+  const color = usePhotoStore((state) => state.actions.setFrameColor);
   return (
     <SwipeThings
       array={FrameColors}

@@ -22,3 +22,10 @@ export const cntNum = styled.h1`
     opacity: 0.5;
     position: absolute;
 `
+export const Canvas = styled.canvas`
+    display: flex;
+    position: absolute;
+    width: 55%;
+    border-radius: 8px;
+    z-index: 10;
+`
