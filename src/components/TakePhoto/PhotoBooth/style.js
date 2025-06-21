@@ -11,7 +11,7 @@ export const BoothWrapper = styled.div`
 `
 
 export const Camera = styled(Webcam)`
-    width: 55%;
+    width: 500px;
     border-radius: 8px;
     position: relative;
 `
@@ -25,7 +25,7 @@ export const cntNum = styled.h1`
 export const Canvas = styled.canvas`
     display: flex;
     position: absolute;
-    width: 55%;
+    width: 500px;
     border-radius: 8px;
     z-index: 10;
 `
