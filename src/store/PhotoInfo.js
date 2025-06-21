@@ -3,8 +3,8 @@ import { create } from "zustand";
 export const usePhotoStore = create((set) => ({
   frameColor: "",
   frameText: "",
-  bgPhoto: "",
-  photo: [],
+  bgPhoto: null,
+  photo: [null, null,], // 4개의 빈 슬롯으로 초기화
   actions: {
     setFrameColor: (color) => set({ frameColor: color }),
     setFrameText: (text) => set({ frameText: text }),

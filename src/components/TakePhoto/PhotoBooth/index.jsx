@@ -30,6 +30,7 @@ const PhotoBooth = () => {
 
   useEffect(() => {
     let stream = null;
+    let isComponentMounted = true;
 
     const startCamera = async () => {
       try {
@@ -45,16 +46,20 @@ const PhotoBooth = () => {
           });
 
 
-          if (videoRef.current) {
+          if (videoRef.current && isComponentMounted) {
             videoRef.current.srcObject = stream;
 
 
-            try {
-              await videoRef.current.play();
-              console.log("웹캠 재생 시작");
-            } catch (e) {
-              console.error("웹캠 재생 실패:", e);
-            }
+            videoRef.current.onloadedmetadata = async () => {
+              if (videoRef.current && isComponentMounted) {
+                try {
+                  await videoRef.current.play();
+                  console.log("웹캠 재생 시작");
+                } catch (e) {
+                  console.error("웹캠 재생 실패:", e);
+                }
+              }
+            };
           }
         }
       } catch (e) {
@@ -139,9 +144,9 @@ const PhotoBooth = () => {
   }, [bgImg, isModelLoaded]);
 
   const startCountdown = () => {
+    if (takeCount >= 2) return;
     setIsCnt(true);
     setCountdown(3);
-  
     const countdownInterval = setInterval(() => {
       setCountdown((prevCountdown) => {
         if (prevCountdown <= 1) {

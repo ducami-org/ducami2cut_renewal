@@ -6,7 +6,7 @@ import PhotoBooth from '../../components/TakePhoto/PhotoBooth'
 const TakePhoto = () => {
   return (
     <S.Container>
-        <Header left='/bg' right='/' title='사진 촬영'/>
+        <Header left='/bg' right='/finish' title='사진 촬영'/>
         <PhotoBooth/>
     </S.Container>
   )
