@@ -29,55 +29,84 @@ const PhotoBooth = () => {
   }, [bg]);
 
   useEffect(() => {
-    let stream = null;
     let isComponentMounted = true;
 
     const startCamera = async () => {
+      // videoRef가 실제로 존재할 때까지 대기
+      if (!videoRef.current) {
+        setTimeout(() => startCamera(), 100);
+        return;
+      }
+
       try {
-        if (videoRef.current) {
+        if (videoRef.current.srcObject) {
+          const tracks = videoRef.current.srcObject.getTracks();
+          tracks.forEach(track => track.stop());
+        }
+
+        const stream = await navigator.mediaDevices.getUserMedia({ 
+          video: { width: 640, height: 480 } 
+        });
+
+        if (videoRef.current && isComponentMounted) {
+          videoRef.current.srcObject = stream;
+
+          videoRef.current.onloadedmetadata = async () => {
+            if (videoRef.current && isComponentMounted) {
+              try {
+                // 비디오 요소가 완전히 로드될 때까지 대기
+                await new Promise(resolve => {
+                  if (videoRef.current.readyState >= 2) {
+                    resolve();
+                  } else {
+                    videoRef.current.addEventListener('loadeddata', resolve, { once: true });
+                  }
+                });
                 
-          if (videoRef.current.srcObject) {
-            const tracks = videoRef.current.srcObject.getTracks();
-            tracks.forEach(track => track.stop());
-          }
-
-          stream = await navigator.mediaDevices.getUserMedia({ 
-            video: { width: 640, height: 480 } 
-          });
-
-
-          if (videoRef.current && isComponentMounted) {
-            videoRef.current.srcObject = stream;
-
-
-            videoRef.current.onloadedmetadata = async () => {
-              if (videoRef.current && isComponentMounted) {
-                try {
-                  await videoRef.current.play();
-                  console.log("웹캠 재생 시작");
-                } catch (e) {
-                  console.error("웹캠 재생 실패:", e);
-                }
+                await videoRef.current.play();
+                
+                // 비디오가 실제로 재생되고 프레임이 있을 때까지 추가 대기
+                await new Promise(resolve => {
+                  const checkVideo = () => {
+                    if (videoRef.current && 
+                        videoRef.current.videoWidth > 0 && 
+                        videoRef.current.videoHeight > 0 && 
+                        videoRef.current.readyState === 4) {
+                      resolve();
+                    } else {
+                      requestAnimationFrame(checkVideo);
+                    }
+                  };
+                  checkVideo();
+                });
+                
+                console.log("웹캠 재생 시작");
+              } catch (e) {
+                console.error("웹캠 재생 실패:", e);
               }
-            };
-          }
+            }
+          };
         }
       } catch (e) {
         console.error("웹캠 접근 오류:", e);
       }
     };
 
-    startCamera();
+    // 컴포넌트 마운트 후 약간의 지연을 두고 카메라 시작
+    const timer = setTimeout(() => {
+      startCamera();
+    }, 50);
 
     return () => {
-      if (stream) {
-        const tracks = stream.getTracks();
+      isComponentMounted = false;
+      clearTimeout(timer);
+      if (videoRef.current && videoRef.current.srcObject) {
+        const tracks = videoRef.current.srcObject.getTracks();
         tracks.forEach(track => track.stop());
         console.log("웹캠 스트림 종료");
       }
     };
   }, []);
-
 
   useEffect(() => {
     if (!videoRef.current || !canvasRef.current) return;
@@ -102,14 +131,10 @@ const PhotoBooth = () => {
       ctx.scale(-1, 1);
 
 
-      if (bgImg) {
-        console.log("배경 이미지 그리기 시도");
-        ctx.drawImage(bgImg, 0, 0, canvas.width, canvas.height);
-      } else {
-
-        ctx.fillStyle = "#444";
+    
+        ctx.fillStyle = "#29c627";
         ctx.fillRect(0, 0, canvas.width, canvas.height);
-      }
+      
 
       ctx.save();
       ctx.filter = "blur(3px)";
