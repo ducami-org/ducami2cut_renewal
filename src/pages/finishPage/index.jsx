@@ -3,6 +3,7 @@ import * as S from './style.js';
 import PreviewPhoto from '../../components/FinishPage/PreviewPhoto';
 import FinishBtn from '../../components/FinishPage/FinishBtn';
 import html2canvas from 'html2canvas';
+import TextInput from '../../components/FinishPage/TextInput/index.jsx';
 
 const Finish = () => {
   const printRef = useRef(null);
@@ -42,7 +43,11 @@ const Finish = () => {
   return (
     <S.Container>
       <PreviewPhoto ref={printRef} />
+      <S.setWrapper>
+      <TextInput />
       <FinishBtn onClick={handleDownload} />
+      </S.setWrapper>
+      
     </S.Container>
   );
 };

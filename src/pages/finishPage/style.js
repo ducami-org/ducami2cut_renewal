@@ -13,3 +13,12 @@ export const Container = styled.div`
     overflow: hidden;
     box-sizing: border-box;
 `
+export const setWrapper = styled.div`
+    width:30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-right:100px;
+`

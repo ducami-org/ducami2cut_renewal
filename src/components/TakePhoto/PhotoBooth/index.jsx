@@ -79,7 +79,14 @@ const PhotoBooth = () => {
                   };
                   checkVideo();
                 });
-                
+
+                // MediaPipe 초기화를 비디오 준비 완료 후에 실행
+                setTimeout(() => {
+                  if (videoRef.current && isComponentMounted) {
+                    console.log("MediaPipe 초기화 함수 호출"); // Placeholder for MediaPipe initialization
+                  }
+                }, 100);
+
                 console.log("웹캠 재생 시작");
               } catch (e) {
                 console.error("웹캠 재생 실패:", e);

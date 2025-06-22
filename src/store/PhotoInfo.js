@@ -7,7 +7,7 @@ export const usePhotoStore = create((set) => ({
   photo: [null, null,], // 4개의 빈 슬롯으로 초기화
   actions: {
     setFrameColor: (color) => set({ frameColor: color }),
-    setFrameText: (text) => set({ frameText: text }),
+    setFrameText: (text) => set({ frameText:text }),
     setBgPhoto: (photo) => set({ bgPhoto: photo }),
     setPhoto: (index, newPhoto) =>
       set((state) => {

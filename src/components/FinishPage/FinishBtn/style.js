@@ -3,6 +3,7 @@ import { Colors } from "../../../styles/colors";
 
 export const BtnBox = styled.button`
     all:unset;
+    flex:1;
     padding: 0 20px 0 20px;
     height: 50px;
     border-radius:90px;
@@ -20,7 +21,7 @@ export const BtnBox = styled.button`
     }
 `
 export const BtnWrapper = styled.div`
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    gap: 20px;
+    gap: 32px;
 `

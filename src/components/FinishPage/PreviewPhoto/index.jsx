@@ -3,7 +3,9 @@ import * as S from "./style";
 import { usePhotoStore } from "../../../store/PhotoInfo";
 
 const PreviewPhoto = forwardRef(function PreviewPhoto(props, ref) {
-  const { photo, frameColor, bgPhoto } = usePhotoStore();
+  const { photo, frameColor, bgPhoto, frameText} = usePhotoStore();
+  const textColor = frameColor === '#000000' ? 'white' : 'black';
+
   return (
     <S.FrameBox style={{ backgroundColor: frameColor }} ref={ref}>
       {photo.map((item, index) => (
@@ -19,6 +21,7 @@ const PreviewPhoto = forwardRef(function PreviewPhoto(props, ref) {
           <S.PhotoBox src={item} />
         </div>
       ))}
+      <S.TextBox style={{ color: textColor }}>{frameText}</S.TextBox>
     </S.FrameBox>
   );
 });

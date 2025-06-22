@@ -6,7 +6,7 @@ export const FrameBox = styled.div`
     border-radius: 8px;
     display:flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     padding: 20px 20px 80px 20px;
     gap:20px;
     flex-direction: column;
@@ -18,4 +18,8 @@ export const PhotoBox = styled.img`
     flex:1;
     border-radius: 4px;
     
+`
+export const TextBox = styled.div`
+    font-size: 16px;
+    font-family: 'paperlogySB';
 `
