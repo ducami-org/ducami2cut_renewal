@@ -1,30 +1,29 @@
+// 배경 이미지 파일 임포트
+import schoolImg from '../assets/bgImages/schoolimg.jpg';          // 학교 이미지
+import schoolLogo from '../assets/bgImages/schoolLogo.png';         // 학교 로고
+import whisk1 from '../assets/bgImages/Whisk_cymwq5y2ji.jpg';      // 배경 이미지 1
+import whisk2 from '../assets/bgImages/Whisk_gewzdi5y2q.jpg';      // 배경 이미지 2
+import whisk3 from '../assets/bgImages/Whisk_hmowuyymqz.jpg';      // 배경 이미지 3
+import whisk4 from '../assets/bgImages/Whisk_ji4zjg3zty.jpg';      // 배경 이미지 4
+import whisk5 from '../assets/bgImages/Whisk_m2n2y4otlm.jpg';      // 배경 이미지 5
+import whisk6 from '../assets/bgImages/Whisk_myxnzvhzmq.jpg';      // 배경 이미지 6
+import whisk7 from '../assets/bgImages/Whisk_wzlmdvlmde.jpg';      // 배경 이미지 7
+
+/**
+ * 선택 가능한 배경 이미지 배열
+ * 
+ * 각 항목은 id와 url 속성을 가집니다.
+ * - id: 고유 식별자
+ * - url: import된 이미지 객체 (webpack/vite에 의해 변환된 URL)
+ */
 export const PhotoUrl = [
-    {
-        id:1,
-        url:'https://www.imaeil.com/photos/2022/08/17/2022081719563747922_l.jpg'
-    },{
-        id:2,
-        url:'https://i.namu.wiki/i/Ak01MLBhXJmXfhmoNycSC18oquE-db2sea8zmUF7sw38MG3KemaJ6jsVGnalbF-80p75qZZ-QzxizEr5PSDvg0DTgYcOzzgFJSI9d8eUtg3AXvwDDC4dXqHoWQ7NmV9VGrIGaYp3B1FfgEh-Pkqr8w.webp'
-    },{
-        id:3,
-        url:"https://i.ibb.co/Sw2Cv0F3/Whisk-cymwq5y2ji.jpg"
-    },{
-        id:4,
-        url:"https://i.ibb.co/kgw1ydzP/Whisk-m2n2y4otlm.jpg" 
-    },{
-        id:5,
-        url:"https://i.ibb.co/TMTM9P85/Whisk-gewzdi5y2q.jpg"
-    },{
-        id:6,
-        url:"https://i.ibb.co/Rp1YrF3G/Whisk-5d81dedc6d.jpg"
-    },{
-        id:7,
-        url:'https://i.pinimg.com/736x/c6/cf/93/c6cf93c1e250cb381073e43c546cdd89.jpg'
-    },{
-        id:8,
-        url:"https://i.ibb.co/h1T7LgWR/Whisk-myxnzvhzmq.jpg"
-    },{
-        id:9,
-        url:"https://i.ibb.co/bRMBmcg5/Whisk-wzlmdvlmde.jpg"
-    }
-]
+    { id: 1, url: schoolImg },    // 학교 이미지
+    { id: 2, url: schoolLogo },   // 학교 로고
+    { id: 3, url: whisk1 },       // 배경 이미지 1
+    { id: 4, url: whisk2 },       // 배경 이미지 2
+    { id: 5, url: whisk3 },       // 배경 이미지 3
+    { id: 6, url: whisk4 },       // 배경 이미지 4
+    { id: 7, url: whisk5 },       // 배경 이미지 5
+    { id: 8, url: whisk6 },       // 배경 이미지 6
+    { id: 9, url: whisk7 }        // 배경 이미지 7
+];
