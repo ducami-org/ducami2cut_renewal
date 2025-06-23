@@ -102,7 +102,6 @@ const PhotoBooth = () => {
 
         if (isComponentMounted) {
           setIsVideoReady(true);
-          console.log("웹캠 준비 완료");
         }
 
       } catch (e) {
