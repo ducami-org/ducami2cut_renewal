@@ -1,9 +1,10 @@
 import React from 'react'
 import * as S from './style'
 
-const Frames = ({p}) => {
+const Frames = ({p, select}) => {
   return (
-    <S.FrameBox style={{backgroundColor:p}}>
+    <S.FrameBox style={{backgroundColor: p }}>
+      {select && <S.SelectBox/>}
         <S.EmptyBox/>
         <S.EmptyBox/>
     </S.FrameBox>

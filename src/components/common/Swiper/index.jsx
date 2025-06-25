@@ -5,7 +5,7 @@ import { Navigation } from "swiper/modules";        // Swiper 네비게이션
 import ArrowBtn from "../../common/ArrowBtn";       // 화살표 버튼
 import SelectBtn from "../../common/SelectBtn";     // 선택 버튼
 import "swiper/css";                               // Swiper 스타일
-
+import { Colors } from "../../../styles/colors";
 /**
  * 범용 스와이퍼 컴포넌트
  * 
@@ -21,6 +21,7 @@ const SwipeThings = ({store, array, attribute, Component}) => {
   const nextRef = useRef(null);  // 다음 버튼 참조
   const [isReady, setIsReady] = useState(false);  // 스와이퍼 준비 상태
   const [activeIndex, setActiveIndex] = useState(0);  // 현재 활성 슬라이드 인덱스
+  const [sIndex, setSIndex] = useState(0);  // 현재 인덱스 (사용되지 않음)
   const RenderComponent = Component;  // 렌더링할 컴포넌트
 
   /**
@@ -37,6 +38,7 @@ const SwipeThings = ({store, array, attribute, Component}) => {
    */
   const handleChangeAttribute = () => {
     // 선택된 항목의 속성 값을 저장
+    setSIndex(activeIndex);
     store(array[activeIndex][attribute]);
   };
 
@@ -77,9 +79,9 @@ const SwipeThings = ({store, array, attribute, Component}) => {
             onSlideChange={handleSlideChange}  // 슬라이드 변경 이벤트 핸들러
           >
             {/* 각 항목을 슬라이드로 렌더링 */}
-            {array.map((item) => (
-              <S.FrameWrapper key={item.id}>
-                <RenderComponent p={item[attribute]}/>
+            {array.map((item,index) => (
+              <S.FrameWrapper key={item.id} >
+                <RenderComponent p={item[attribute]} select={ sIndex === index }/>
               </S.FrameWrapper>
             ))}
           </Swiper>

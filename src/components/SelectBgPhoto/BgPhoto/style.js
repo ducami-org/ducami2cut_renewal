@@ -5,4 +5,6 @@ export const PhotoWrapper = styled.img`
     height: 360px;
     border-radius: 16px;
     object-fit: cover;
+    position: relative;
+    box-sizing: border-box;
 `

@@ -11,6 +11,8 @@ export const FrameBox = styled.div`
     padding: 20px 20px 80px 20px;
     gap:20px;
     flex-direction: column;
+    box-sizing: content-box;
+    position: relative;
 `
 export const EmptyBox = styled.div`
     width: 100%;
@@ -18,4 +20,14 @@ export const EmptyBox = styled.div`
     border-radius: 4px;
     background-color: ${Colors.white};
     border:2px solid ${Colors.gray};
+`
+export const SelectBox = styled.div`
+    position: absolute;
+    background-color:rgba(39, 196, 186, 0.45);
+    width: 100%;
+    top:0;
+    left:0;
+    height: 100%;
+    border-radius: 8px;
+    z-index: 1000;
 `

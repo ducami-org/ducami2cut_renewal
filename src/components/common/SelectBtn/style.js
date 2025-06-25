@@ -21,4 +21,7 @@ export const BtnBox = styled.button`
     background-color: ${Colors.primary};
     color: ${Colors.white};
   }
+  &:active{
+    transform: scale(1.2);
+  }
 `;
