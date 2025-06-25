@@ -21,7 +21,7 @@ const SwipeThings = ({store, array, attribute, Component}) => {
   const nextRef = useRef(null);  // 다음 버튼 참조
   const [isReady, setIsReady] = useState(false);  // 스와이퍼 준비 상태
   const [activeIndex, setActiveIndex] = useState(0);  // 현재 활성 슬라이드 인덱스
-  const [sIndex, setSIndex] = useState(0);  // 현재 인덱스 (사용되지 않음)
+  const [sIndex, setSIndex] = useState(9);  // 현재 인덱스 (사용되지 않음)
   const RenderComponent = Component;  // 렌더링할 컴포넌트
 
   /**
